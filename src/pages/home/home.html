@@ -20,11 +20,14 @@
         </tr>
     </table>-->
 
-    <ion-card *ngFor="let x of csvData">
+    <ion-card *ngFor="let x of csvData" class="card-background-page">
       <ion-card-header>
         {{x.institution}}
       </ion-card-header>
       <ion-card-content>
+        <!--<ion-card-title>
+      Nine Inch Nails Live
+      </ion-card-title>-->
         <!-- Add card content here! -->
               <table border="1" class="demoTable">
                 <tr >
@@ -33,6 +36,43 @@
                   <td>{{x.country}}</td>
                 </tr>
          </table>
+             <ion-row >
+        <ion-col>
+              <button primary clear small>
+                <ion-icon name="cart"></ion-icon>
+                <div>Shopping</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button primary clear small> 
+                <ion-icon name="medical"></ion-icon>
+                <div>Hospital</div>
+              </button>
+            </ion-col>
+            <button primary clear small>
+                <ion-icon name="cafe"></ion-icon>
+                <div>Cafe</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button primary clear small> 
+                <ion-icon name="paw"></ion-icon>
+                <div>Dog Park</div>
+              </button>
+            </ion-col>              <button primary clear small>
+                <ion-icon name="planet"></ion-icon>
+                <div>Space</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button primary clear small> 
+                <ion-icon name="beer"></ion-icon>
+                <div>Pub</div>
+              </button>
+            </ion-col>
+          </ion-row>
+
+  </ion-list>-->
       </ion-card-content>
     </ion-card>
 
