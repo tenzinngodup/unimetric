@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Name of the schools</h2>
+  <p>
+  </p>
+  <!--<p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>-->
+      <!--<table border="1" class="demoTable">
+        <tr *ngFor="let x of csvData">
+          <td>{{x.world_rank}}</td>
+          <td>{{x.institution}}</td>
+          <td>{{x.country}}</td>
+        </tr>
+    </table>-->
+
+    <ion-card *ngFor="let x of csvData">
+      <ion-card-header>
+        {{x.institution}}
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Add card content here! -->
+              <table border="1" class="demoTable">
+                <tr >
+                  <td>{{x.world_rank}}</td>
+                  <td>{{x.institution}}</td>
+                  <td>{{x.country}}</td>
+                </tr>
+         </table>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
