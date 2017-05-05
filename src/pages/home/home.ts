@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Http} from '@angular/http';
+import {CommonService} from '../../providers/common-service.ts';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+   providers: [CommonService]
 })
 export class HomePage {
   csvUrl: string = '../assets/cwurData.csv';  // URL to web API
   csvData: any = [];
 
 
-  constructor(public navCtrl: NavController,public http: Http) {
+  constructor(public navCtrl: NavController,public http: Http ) {
   	// this.http.get('../assets/cwurData.csv')
     //             .subscribe(res => this.data = res);
     //     this.http.get(this.csvUrl)

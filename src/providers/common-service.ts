@@ -14,5 +14,8 @@ export class CommonService {
   constructor(public http: Http) {
     console.log('Hello CommonService Provider');
   }
+  wikimediaURL(){
+   return "https://en.wikipedia.org/w/api.php?action=query&titles=harvard&prop=images&imlimit=20&format=jsonfm"
+  }
 
 }
