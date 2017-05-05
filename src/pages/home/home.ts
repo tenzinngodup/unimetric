@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Http} from '@angular/http';
 import {CommonService} from '../../providers/common-service.ts';
+import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -17,7 +18,7 @@ export class HomePage {
   csvData: any = [];
 
 
-  constructor(public navCtrl: NavController,public http: Http ) {
+  constructor(public navCtrl: NavController,public http: Http ,storage: Storage) {
   	// this.http.get('../assets/cwurData.csv')
     //             .subscribe(res => this.data = res);
     //     this.http.get(this.csvUrl)
@@ -26,6 +27,17 @@ export class HomePage {
     //   err => this.handleError(err)
     // );
     this.readCsvData();
+    storage.ready().then(() => {
+
+       // set a key/value
+       storage.set('name', 'Max');
+
+       // Or to get a key/value pair
+       storage.get('age').then((val) => {
+         console.log('Your age is', val);
+       })
+     });
+     
   }
 
     readCsvData () {
